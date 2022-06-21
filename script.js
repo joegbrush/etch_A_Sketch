@@ -1,6 +1,7 @@
 //Etch A Sketch Script
 
 let color = "black";
+let click = true;
 
 function populateBoard(size) {
   let board = document.querySelector(".board");
@@ -32,13 +33,21 @@ function changeSize(input) {
 }
 
 function colorsquare() {
-  if (color == "random") {
-    this.style.backgroundColor = `hsl(${Math.random() * 369}, 100%, 50%)`;
-  } else {
-    this.style.backgroundColor = color;
+  if (click) {
+    if (color == "random") {
+      this.style.backgroundColor = `hsl(${Math.random() * 369}, 100%, 50%)`;
+    } else {
+      this.style.backgroundColor = color;
+    }
   }
 }
 
 function changeColor(choice) {
   color = choice;
+}
+
+function resetBoard() {
+  let board = document.querySelector(".board");
+  let squares = board.querySelectorAll("div");
+  squares.forEach((div) => (div.style.backgroundColor = "white"));
 }
