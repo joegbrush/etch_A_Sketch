@@ -9,6 +9,21 @@
     <link rel="stylesheet" href="/Users/joebrush/repos/etch_A_Sketch/v2/style2.css">
 </head>
 <body>
+    <div class="container">
+        <div class="title"><h1>Sketchpad</h1></div>
+        <div class="board"></div>
+        <div class="buttons">
+            <button id="black" value="black" onclick = "changeColor('black')">Black</button>
+            <button id="random"value="random" onclick = "changeColor('random')">Random</button>
+            <button id="erase"value="erase" onclick = "changeColor('white')">Erase</button>
+            <button id="reset"value="reset" onclick = "reset()">Reset</button>
+        </div>
+        <div>
+            <input class="input" type="text" value="16" onchange="changeSize(this.value)" placeholder="Select size 2-100">
+            <button>Resize</button>
+        </div>
+        <div class="error"></div>
+    </div>
     <script src="/Users/joebrush/repos/etch_A_Sketch/v2/script2.js"></script>
 </body>
 </html>
